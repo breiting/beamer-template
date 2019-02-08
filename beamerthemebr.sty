@@ -1,0 +1,35 @@
+% Custom font
+% http://xpt.sourceforge.net/techdocs/language/latex/latex33-LaTeXAndTrueTypeFont/ar01s03.html
+
+\usefonttheme[onlylarge]{structurebold}
+
+% Disable navigation pane
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{headline} {
+    \vspace*{1mm}
+    \hfill\includegraphics[height=1cm]{oscar.png}\hspace*{1mm}
+}
+
+\definecolor{re-orange}{RGB}{255,150,0}
+\definecolor{re-gray}{RGB}{92,92,92}
+\definecolor{re-lightgray}{RGB}{232,232,232}
+
+\setbeamerfont{title}{size=\huge}
+\setbeamerfont{date}{size=\small}
+
+\setbeamercolor{fuss}{fg=re-gray, bg=re-lightgray}
+\setbeamercolor{title}{fg=re-gray}
+\setbeamercolor{author}{fg=gray}
+\setbeamercolor{date}{fg=gray}
+\setbeamercolor{frametitle}{fg=re-gray}
+\setbeamercolor{normal text}{fg=re-gray}
+
+\setbeamercolor{structure}{fg=re-gray}
+
+
+% \setbeamertemplate{footline}{
+%     \begin{beamercolorbox}[wd=\textwidth,ht=2mm,dp=1mm]{fuss}
+%         \hspace*{3mm}\inserttitle \hfill \insertauthor\hspace*{3mm}
+%     \end{beamercolorbox}
+% }

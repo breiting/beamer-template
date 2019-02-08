@@ -1,0 +1,19 @@
+\ProvidesFile{t1lhandw.fd}[Lucida-Handwriting font]
+
+\DeclareFontFamily{T1}{lhandw}{}
+
+\DeclareFontShape{T1}{lhandw}{m}{n}{
+   <-> lhandw
+}{}
+
+\DeclareFontShape{T1}{lhandw}{bx}{n}{<->ssub * lhandw/m/n}{}
+
+\DeclareFontShape{T1}{lhandw}{m}{it}{<->ssub * ptm/m/it}{}
+\DeclareFontShape{T1}{lhandw}{m}{sl}{<->ssub * ptm/m/sl}{}
+\DeclareFontShape{T1}{lhandw}{m}{sc}{<->ssub * ptm/m/sc}{}
+
+\DeclareFontShape{T1}{lhandw}{bx}{it}{<->ssub * ptm/b/it}{}
+\DeclareFontShape{T1}{lhandw}{bx}{sl}{<->ssub * ptm/b/sl}{}
+\DeclareFontShape{T1}{lhandw}{bx}{sc}{<->ssub * ptm/b/sc}{}
+
+\pdfmapline{+lhandw\space <lhandw.ttf\space <T1-WGL4.enc}

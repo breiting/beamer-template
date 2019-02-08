@@ -1,0 +1,94 @@
+\documentclass[aspectratio=43]{beamer}
+% aspectratio:
+% 32 (3:2)
+% 43 (4:3)
+% 54 (5:4)
+% 149 (14:9)
+% 169 (16:9)
+% 1610 (16:10)
+% 141 (1,41:1)
+
+\usepackage{multimedia}
+\usepackage{color}
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+
+\usepackage{helvet}
+% \usepackage{lipsum}
+
+\usetheme{br}
+
+\title{My presentation}
+\author{Bernhard Reitinger}
+
+\begin{document}
+\usefont{T1}{lhandw}{m}{n}
+
+\maketitle
+
+\begin{frame}{Agenda}
+
+    \begin{itemize}
+        \item Item 1
+            \pause{}
+        \item Item 2
+        \item Item 3
+        \item Item 4
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Image example}
+    \centering
+    \includegraphics[height=0.7\textheight]{anonymous.png}
+\end{frame}
+
+\begin{frame}[fragile]{Code snippet}
+    \begin{verbatim}
+    func main() {
+    start()
+}
+    \end{verbatim}
+\end{frame}
+
+\begin{frame}{Two Columns}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \centering
+        Column 1
+        \column{0.5\textwidth}
+        \centering
+        Column 2
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \begin{description}
+        \item[API] Application Programming Interface
+        \item[LAN] Local Area Network
+        \item[ASCII] American Standard Code for Information Interchange
+    \end{description}
+\end{frame}
+
+\begin{frame}{Movie Sample}
+    \centering
+    \movie[externalviewer]{Play video}{/home/breiting/Videos/Hololenstutorial.mp4}
+    % Only works with evince. Press 'f' to get the video get to foreground
+
+\end{frame}
+
+\begin{frame}
+    \centering
+
+    \Huge
+
+    Closing\\
+    Remarks
+\end{frame}
+
+\end{document}
