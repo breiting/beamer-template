@@ -8,6 +8,7 @@
 % 1610 (16:10)
 % 141 (1,41:1)
 
+\usepackage{tikz}
 \usepackage{multimedia}
 \usepackage{color}
 \usepackage{graphicx}
@@ -48,9 +49,12 @@
     \includegraphics[height=0.7\textheight]{anonymous.png}
 \end{frame}
 
+%Fullscreen image
+\fullframegraphich[credits]{background.jpg}
+
 \begin{frame}[fragile]{Code snippet}
     \begin{verbatim}
-    func main() {
+func main() {
     start()
 }
     \end{verbatim}
@@ -77,9 +81,8 @@
 
 \begin{frame}{Movie Sample}
     \centering
-    \movie[externalviewer]{Play video}{/home/breiting/Videos/Hololenstutorial.mp4}
+    \movie[externalviewer]{Play video}{movie.mp4}
     % Only works with evince. Press 'f' to get the video get to foreground
-
 \end{frame}
 
 \begin{frame}
@@ -87,8 +90,8 @@
 
     \Huge
 
-    Closing\\
-    Remarks
+    Thank\\
+    you
 \end{frame}
 
 \end{document}

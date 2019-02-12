@@ -27,9 +27,84 @@
 
 \setbeamercolor{structure}{fg=re-gray}
 
+\usepackage[export]{adjustbox}
+\tikzset{ffgcaption/.style={%
+    anchor=south east,font=\tiny,
+    text=white,fill=black,
+    fill opacity=.5,text opacity=1,inner sep=2pt,
+    text height=1ex,text depth=.25ex}}
+
+% \fullframegraphic
+% renders a single image fullscreen, with an optional credit/caption in the
+% lower right corner.
+% Usage: \fullframegraphic[some optional caption]{path/to/image}
+% It does not crop the image, but leads to white borders if image does not match
+% the aspect ratio of the slide. See commands \fullframegraphicw and
+% \fullframegraphich below for cropping alternatives.
+\newcommand{\fullframegraphic}[2][]{%
+\begin{frame}%
+\begin{tikzpicture}[remember picture,overlay]%
+\node[at=(current page.center)] {%
+\includegraphics[height=\paperheight,width=\paperwidth,keepaspectratio]{#2}%
+};%
+\ifx\relax#1\relax\else%
+\node[at=(current page.south east),ffgcaption] {#1};%
+\fi%
+\end{tikzpicture}%
+\end{frame}%
+}
+
+% \fullframegraphicw: scles image to frame width, cropping excess height.
+% use for images that are "taller" than the frame aspect ratio
+\newcommand{\fullframegraphicw}[2][]{%
+\begin{frame}%
+\begin{tikzpicture}[remember picture,overlay]%
+\node[at=(current page.center)] {%
+\includegraphics[min height=\paperheight,max width=\paperwidth,keepaspectratio]{#2}%
+};%
+\ifx\relax#1\relax\else%
+\node[at=(current page.south east),ffgcaption] {#1};%
+\fi%
+\end{tikzpicture}%
+\end{frame}%
+}
+
+% \fullframegraphich: scales image to frame height, cropping excess width.
+% use for images that are wider than the frame aspect ratio
+\newcommand{\fullframegraphich}[2][]{%
+\begin{frame}%
+\begin{tikzpicture}[remember picture,overlay]%
+\node[at=(current page.center)] {%
+\includegraphics[max height=\paperheight,min width=\paperwidth,keepaspectratio]{#2}%
+};%
+\ifx\relax#1\relax\else%
+\node[at=(current page.south east),ffgcaption] {#1};%
+\fi%
+\end{tikzpicture}%
+\end{frame}%
+}
+
+% \fullframegraphics: more customisable version of fullframegraphic, allowing
+% a third argument to insert additional tikz commands for custom overlays.
+% use when tooltips or highlights are required on a large image
+\newcommand{\fullframegraphics}[3][]{%
+\begin{frame}%
+\begin{tikzpicture}[remember picture,overlay]%
+\node[at=(current page.center)] {%
+\includegraphics[height=\paperheight,width=\paperwidth,keepaspectratio]{#2}%
+};%
+\ifx\relax#1\relax\else%
+\node[at=(current page.south east),ffgcaption] {#1};%
+\fi%
+#3%
+\end{tikzpicture}%
+\end{frame}%
+}
+
 
 % \setbeamertemplate{footline}{
 %     \begin{beamercolorbox}[wd=\textwidth,ht=2mm,dp=1mm]{fuss}
 %         \hspace*{3mm}\inserttitle \hfill \insertauthor\hspace*{3mm}
 %     \end{beamercolorbox}
 % }
+
